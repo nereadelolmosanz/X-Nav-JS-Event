@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <title>Duplicator</title>
+     <style type="text/css" media="screen">
+      h1 {
+        padding: 0;
+        margin:50px auto;
+        text-align: center;
+        font: 100% Verdana;
+        font-size: 1.5em;
+      }
+     </style>
+   </head>
+   <body>
+     <h1>Ejercicio 5.5.11 - addEventListener para leer contenidos
+de formularios</h1>
+     <form>
+       Text: <input type="text" id="text"/>
+     </form>
+     <p id="write"></p>
+
+     <script type="text/javascript" charset="utf-8">
+      var readElement = document.getElementById("text");
+      var writeElement = document.getElementById("write");
+      var changerHandler = function (e){
+          writeElement.innerHTML = this.value;
+       };
+       readElement.addEventListener("input", changerHandler);
+     </script>
+   </body>
+</html>
