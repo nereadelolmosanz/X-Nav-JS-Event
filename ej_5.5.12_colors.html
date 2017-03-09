@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Visualizador de colores</title>
+    <style type="text/css" media="screen">
+      body {
+        padding: 0;
+        margin:50px auto;
+        text-align: center;
+        background-color: #A9D0F5;
+      }
+      h1 {
+        font: 100% Verdana;
+        font-size: 1.5em;
+      }
+      div#write {
+        width: 200px;
+        margin-left: 40%;
+        border: 2px solid black;
+        border-radius: 8%;
+        text-align: center;
+      }
+      #footer{
+        font-size: 0.75em;
+        text-align: right;
+        margin-right: 3%;
+      }
+    </style>
+   </head>
+   <body>
+    <h1>Ejercicio 5.5.12 - Colores con addEventListener</h1>
+    <form>
+      Escribe un color válido en HTML: <input type="text" id="read" value="#000000"/>
+    </form>
+    </br></br>
+    <div id="write" style="background: transparent">
+
+    </div>
+    <br><br><br>
+    <footer id="footer">
+      <p>&copy; Nerea Del Olmo Sanz, 2017 </p>
+    </footer>
+    <script type="text/javascript" charset="utf-8">
+      var readElement = document.getElementById("read");
+      var writeElement = document.getElementById("write");
+      var changerHandler = function (e){
+          writeElement.style.backgroundColor = this.value;
+          writeElement.innerHTML = "<p>Has elegido este color</p>";
+      };
+      readElement.addEventListener("input", changerHandler);
+    </script>
+  </body>
+</html>
